@@ -25,7 +25,7 @@
           <input
             type="text"
             class="form-control"
-            id="name"
+            id="pedirNombre"
             placeholder="Ejemplo: Paula"
           />
           <label for="floatingInput">Nombre</label>
@@ -35,26 +35,16 @@
             type="number"
             min="1"
             class="form-control"
-            id="cost"
+            id="pedirMonto"
             placeholder="$0.00"
           />
           <label for="floatingInputValue">Cantidad gastada</label>
-          <script>
-            function check() {
-              if (
-                document.getElementById("floatingInputValue").validity
-                  .rangeUnderflow
-              ) {
-                alert("Ingrese un monto válido");
-              }
-            }
-          </script>
         </div>
         <button
           type="button"
           class="btn btn-primary"
           id="boton-enviar"
-          onclick="ejecutar()"
+          onclick=enviar()
         >
           Enviar
         </button>
@@ -66,8 +56,7 @@
         </div>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Total:</h5>
-            <p class="card-text">$gasto</p>
+            <h5 class="card-title" id="total">Total:</h5>
           </div>
         </div>
         <div class="card">

@@ -4,8 +4,6 @@
     color:azure;
     height: 150px;
     margin-bottom: 15px;
-    position: relative;
-    /*falta centrar el texto verticalmente*/
 }
 
 @media screen and (min-width:576px){
@@ -14,11 +12,17 @@
         margin-top: 15px;
         border-radius: 10px;
     }
+
+    h1{
+        padding-top: 20px;
+    }
 }
 
-/*quizá añadir una linea divisora entre el boton enviar y la lista 
-de nombres y gastos vertical en pantalla tipo PC y horizontal 
-en pantalla tipo celular con un margin de 30px*/
+@media screen and (max-width:576px){
+    h1{
+        padding-top: 30px;
+    }
+}
 
 .form-floating{
     margin-left: 30px;
