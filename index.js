@@ -1,6 +1,7 @@
 let nombre = "";
 let monto = 1;
 let todosLosGastos = [];
+let ids = 0;
 
 let inputNombre = document.getElementById("pedirNombre");
 let inputGasto = document.getElementById("pedirMonto");
@@ -16,7 +17,17 @@ let catchName = (evt) => (nombre = evt.target.value);
 let catchCost = (evt) => (monto = evt.target.value, todosLosGastos.push(parseInt(monto)));
 
 function mostrarNombreYmonto(_nombre, _monto) {
-  listaNombreYmonto.innerHTML += `<li class="list-group-item">${_nombre}: $${_monto}</li>`;
+  listaNombreYmonto.innerHTML += `<li class="list-group-item" id=${ids} onclick=eliminar(${ids})>${_nombre}: $${_monto}</li>`;
+  ids += 1;
+}
+
+function eliminar(ids){
+  let index = ids
+  let eliminado = document.getElementById(`${ids}`);
+  todosLosGastos.splice(index, 1);
+  eliminado.remove();
+  mostrarTotal();
+  mostrarPromedio();
 }
 
 function check() {
